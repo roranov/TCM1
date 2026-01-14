@@ -1,0 +1,475 @@
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ================= BODY ================= */
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:linear-gradient(135deg,#1d2671,#c33764);
+    min-height:100vh;
+    color:#222;
+}
+
+/* ================= TYPOGRAPHY ================= */
+h1, h2, h3, h4{
+    font-family:'Segoe UI Semibold','Segoe UI',sans-serif;
+    letter-spacing:0.6px;
+}
+
+p, label, td, th, a{
+    font-size:15px;
+    line-height:1.7;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:70px;
+    background:rgba(29,38,113,0.92);
+    backdrop-filter: blur(8px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 40px;
+    z-index:1000;
+    box-shadow:0 6px 25px rgba(0,0,0,0.35);
+}
+
+.navbar div:first-child{
+    color:#fff;
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:1.4px;
+}
+
+.navbar a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:26px;
+    font-weight:500;
+    font-size:15px;
+    position:relative;
+}
+
+.navbar a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#ff4f81;
+    transition:0.3s;
+}
+
+.navbar a:hover::after{
+    width:100%;
+}
+
+/* ================= PAGE CONTENT ================= */
+.content{
+    padding-top:95px;
+}
+
+/* ================= SECTIONS ================= */
+section{
+    padding:80px 60px;
+}
+
+section h1{
+    font-size:44px;
+    margin-bottom:18px;
+    color:#ffffff;
+}
+
+section h2{
+    font-size:30px;
+    margin-bottom:14px;
+    color:#f0f0f5;
+}
+
+section p{
+    font-size:18px;
+    color:#f5f5f5;
+    max-width:760px;
+}
+
+/* ================= BUTTONS ================= */
+.btn{
+    display:inline-block;
+    margin-top:22px;
+    background:linear-gradient(135deg,#ff4f81,#ff2f6d);
+    color:#fff;
+    padding:14px 32px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:0.5px;
+    box-shadow:0 10px 30px rgba(255,79,129,0.4);
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(255,79,129,0.55);
+}
+
+/* ================= GRID ================= */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:32px;
+    margin-top:30px;
+}
+
+/* ================= CARD ================= */
+.card{
+    background:#ffffff;
+    padding:32px;
+    border-radius:22px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.18);
+    transition:0.35s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+
+.card h3{
+    font-size:23px;
+    margin-bottom:18px;
+    color:#1d2671;
+}
+
+/* ================= FORMS ================= */
+label{
+    font-size:14px;
+    font-weight:600;
+    color:#444;
+    margin-top:14px;
+    display:block;
+}
+
+input, select{
+    width:100%;
+    padding:13px 15px;
+    margin-top:6px;
+    margin-bottom:16px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:15px;
+    transition:0.25s;
+}
+
+input:focus, select:focus{
+    outline:none;
+    border-color:#ff4f81;
+    box-shadow:0 0 0 3px rgba(255,79,129,0.15);
+}
+
+/* FORM BUTTON */
+button{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#1d2671,#c33764);
+    color:#fff;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    opacity:0.92;
+    transform:translateY(-2px);
+}
+
+/* ================= TABLE ================= */
+table{
+    width:92%;
+    margin:45px auto;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+table th{
+    background:#1d2671;
+    color:#fff;
+    padding:15px;
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+}
+
+table td{
+    padding:14px;
+    border-bottom:1px solid #eee;
+    font-size:14.5px;
+}
+
+table tr:hover{
+    background:#f9f9fc;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.action-btn{
+    display:inline-block;
+    padding:7px 16px;
+    margin:4px;
+    font-size:13px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:700;
+    color:#fff;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+    transition:0.25s;
+}
+
+.btn-edit{ background:#17a2b8; }
+.btn-delete{ background:#dc3545; }
+.btn-pay{ background:#28a745; }
+.btn-invoice{ background:#6f42c1; }
+
+.action-btn:hover{
+    transform:translateY(-2px);
+    opacity:0.9;
+}
+
+/* ================= HERO ================= */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    min-height:70vh;
+}
+
+.hero-text{ max-width:620px; }
+
+.hero-image img{
+    width:520px;
+    max-width:100%;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* FLOAT */
+@keyframes float{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-12px); }
+    100%{ transform:translateY(0); }
+}
+
+/* ================= CONTACT ================= */
+.contact-box{
+    background:#fff;
+    padding:26px;
+    border-radius:18px;
+    max-width:620px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+}
+
+.contact-box p{
+    color:#333;
+    font-size:16px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-image img{
+        width:360px;
+        margin-top:30px;
+    }
+
+    section{
+        padding:60px 25px;
+    }
+}
+/* ===== FORCE ACTION BUTTON STYLES ===== */
+table a.action-btn{
+    color:#fff !important;
+    text-decoration:none !important;
+    padding:7px 16px !important;
+    border-radius:8px !important;
+    display:inline-block !important;
+    font-weight:700 !important;
+}
+
+table a.action-btn:hover{
+    text-decoration:none !important;
+    opacity:0.9;
+}
+/* ===== FORCE ACTION BUTTONS (FINAL FIX) ===== */
+.action-btn{
+    padding:7px 16px !important;
+    border-radius:8px !important;
+    font-size:13px !important;
+    font-weight:700 !important;
+    color:#fff !important;
+    border:none !important;
+    cursor:pointer !important;
+    display:inline-block !important;
+    margin:4px !important;
+}
+
+button.action-btn{
+    background:#333;
+}
+
+.btn-edit{ background:#17a2b8 !important; }
+.btn-delete{ background:#dc3545 !important; }
+.btn-pay{ background:#28a745 !important; }
+.btn-invoice{ background:#6f42c1 !important; }
+
+.action-btn:hover{
+    opacity:0.9 !important;
+    transform:translateY(-1px);
+}
+/* ================= ADMIN LOGIN FIX ================= */
+.admin-login-page{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#1d2671,#c33764);
+}
+
+/* LOGIN CARD */
+.admin-login-card{
+    width:100%;
+    max-width:420px;
+    background:#ffffff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+}
+
+/* TITLE */
+.admin-login-card h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#1d2671;
+    font-size:28px;
+    font-weight:800;
+}
+
+/* INPUTS */
+.admin-login-card input{
+    width:100%;
+    padding:14px 16px;
+    margin-bottom:16px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:15px;
+}
+
+.admin-login-card input:focus{
+    outline:none;
+    border-color:#ff4f81;
+    box-shadow:0 0 0 3px rgba(255,79,129,0.2);
+}
+
+/* BUTTON */
+.admin-login-card button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(135deg,#1d2671,#c33764);
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.admin-login-card button:hover{
+    transform:translateY(-2px);
+    opacity:0.95;
+}
+/* ================= ADMIN LOGIN ================= */
+.admin-login-page{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#1d2671,#c33764);
+}
+
+.admin-login-card{
+    width:100%;
+    max-width:420px;
+    background:#ffffff;
+    padding:36px;
+    border-radius:18px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+}
+
+.admin-login-card h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#1d2671;
+    font-size:28px;
+    font-weight:800;
+}
+
+.admin-login-card input{
+    width:100%;
+    padding:14px 16px;
+    margin-bottom:16px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:15px;
+}
+
+.admin-login-card input:focus{
+    outline:none;
+    border-color:#ff4f81;
+    box-shadow:0 0 0 3px rgba(255,79,129,0.2);
+}
+
+.admin-login-card button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(135deg,#1d2671,#c33764);
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.admin-login-card button:hover{
+    transform:translateY(-2px);
+    opacity:0.95;
+}
+
+.login-error{
+    margin-top:14px;
+    text-align:center;
+    color:#dc3545;
+    font-size:14px;
+    font-weight:600;
+}
+
